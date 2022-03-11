@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.Widget.AppCompat.TextView.Title_32">
+        <item name="android:fontFamily">@font/jost_semi_bold</item>
+        <item name="android:textColor">@color/text_heading</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Base.Widget.AppCompat.TextView.Title_24">
+        <item name="android:fontFamily">@font/jost_semi_bold</item>
+        <item name="android:textColor">@color/text_heading</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Base.Widget.AppCompat.TextView.Text_17">
+        <item name="android:fontFamily">@font/jost_regular</item>
+        <item name="android:textColor">@color/text_body</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Base.Widget.AppCompat.TextView.Text_15">
+        <item name="android:fontFamily">@font/jost_regular</item>
+        <item name="android:textColor">@color/text_body</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Base.Widget.AppCompat.TextView.Text_13">
+        <item name="android:fontFamily">@font/jost_regular</item>
+        <item name="android:textColor">@color/text_body</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

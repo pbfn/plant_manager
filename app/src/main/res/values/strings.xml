@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">plant_manager</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_home_page">Gerencie suas plantas de forma fácil</string>
+    <string name="subtitle_home_page">Não esqueça mais de regas suas plantas. Nós cuidamos de lembrar você sempre que precisar</string>
+    <string name="button_next"><![CDATA[>]]></string>
 </resources>
