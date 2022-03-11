@@ -1,4 +1,4 @@
-package com.pedrobruno.plant_manager
+package com.pedrobruno.plant_manager.presentation.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

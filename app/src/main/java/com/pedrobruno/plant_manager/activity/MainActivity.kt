@@ -1,4 +1,4 @@
-package com.pedrobruno.plant_manager
+package com.pedrobruno.plant_manager.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

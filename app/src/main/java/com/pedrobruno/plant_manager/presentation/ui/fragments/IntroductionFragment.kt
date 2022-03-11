@@ -1,6 +1,5 @@
-package com.pedrobruno.plant_manager
+package com.pedrobruno.plant_manager.presentation.ui.fragments
 
-import android.content.res.Resources
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.pedrobruno.plant_manager.R
 import com.pedrobruno.plant_manager.databinding.FragmentIntroductionBinding
 
 

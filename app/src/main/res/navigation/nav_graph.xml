@@ -7,12 +7,12 @@
 
     <activity
         android:id="@+id/splashActivity"
-        android:name="com.pedrobruno.plant_manager.SplashActivity"
+        android:name="com.pedrobruno.plant_manager.activity.SplashActivity"
         android:label="activity_splash"
         tools:layout="@layout/activity_splash" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.pedrobruno.plant_manager.HomeFragment"
+        android:name="com.pedrobruno.plant_manager.presentation.ui.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/introductionFragment"
-        android:name="com.pedrobruno.plant_manager.IntroductionFragment"
+        android:name="com.pedrobruno.plant_manager.presentation.ui.fragments.IntroductionFragment"
         android:label="fragment_introduction"
         tools:layout="@layout/fragment_introduction" />
 </navigation>
