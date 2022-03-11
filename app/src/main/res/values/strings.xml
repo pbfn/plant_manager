@@ -5,4 +5,6 @@
     <string name="title_home_page">Gerencie suas plantas de forma fácil</string>
     <string name="subtitle_home_page">Não esqueça mais de regas suas plantas. Nós cuidamos de lembrar você sempre que precisar</string>
     <string name="button_next"><![CDATA[>]]></string>
+    <string name="title_introdution_page">Como podemos chamar você?</string>
+    <string name="hint_name">Digite um nome</string>
 </resources>
