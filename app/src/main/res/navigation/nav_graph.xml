@@ -14,5 +14,14 @@
         android:id="@+id/homeFragment"
         android:name="com.pedrobruno.plant_manager.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_introductionFragment"
+            app:destination="@id/introductionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/introductionFragment"
+        android:name="com.pedrobruno.plant_manager.IntroductionFragment"
+        android:label="fragment_introduction"
+        tools:layout="@layout/fragment_introduction" />
 </navigation>
