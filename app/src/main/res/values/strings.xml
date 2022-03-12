@@ -7,4 +7,8 @@
     <string name="button_next"><![CDATA[>]]></string>
     <string name="title_introdution_page">Como podemos chamar você?</string>
     <string name="hint_name">Digite um nome</string>
+    <string name="button_confirm">Confirmar</string>
+    <string name="subtitle_mid_fragment">Agora vamos começar a cuidar das sua plantinhas com muito cuidado</string>
+    <string name="title_fragment">Prontinho</string>
+    <string name="button_start">Começar</string>
 </resources>

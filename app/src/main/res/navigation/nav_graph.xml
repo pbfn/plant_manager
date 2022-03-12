@@ -23,5 +23,14 @@
         android:id="@+id/introductionFragment"
         android:name="com.pedrobruno.plant_manager.presentation.ui.fragments.IntroductionFragment"
         android:label="fragment_introduction"
-        tools:layout="@layout/fragment_introduction" />
+        tools:layout="@layout/fragment_introduction" >
+        <action
+            android:id="@+id/action_introductionFragment_to_midFragment"
+            app:destination="@id/midFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/midFragment"
+        android:name="com.pedrobruno.plant_manager.MidFragment"
+        android:label="fragment_mid"
+        tools:layout="@layout/fragment_mid" />
 </navigation>

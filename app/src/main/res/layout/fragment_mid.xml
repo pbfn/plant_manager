@@ -4,53 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.fragments.IntroductionFragment">
+    android:background="@drawable/background_splash"
+    tools:context=".presentation.ui.fragments.MidFragment">
+
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageView_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/ic_introduction_no_text"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_icon_mid"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textView_subtitle"
+        android:id="@+id/textView_title"
         style="@style/Base.Widget.AppCompat.TextView.Title_24"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="100dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/title_introdution_page"
+        android:layout_marginTop="50dp"
+        android:text="@string/title_fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView_icon" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editText_name"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
         style="@style/Base.Widget.AppCompat.TextView.Text_17"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="56dp"
-        android:layout_marginTop="40dp"
-        android:hint="@string/hint_name"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/subtitle_mid_fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_subtitle" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_title" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_confirm"
+        android:id="@+id/button_start"
         style="@style/Base.TextAppearance.AppCompat.Button.buttonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="72dp"
-        android:layout_marginTop="40dp"
-        android:enabled="false"
-        android:text="@string/button_confirm"
+        android:layout_marginHorizontal="70dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/button_start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_name" />
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
