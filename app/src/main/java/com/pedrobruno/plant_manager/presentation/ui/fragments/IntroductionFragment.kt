@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.pedrobruno.plant_manager.R
 import com.pedrobruno.plant_manager.databinding.FragmentIntroductionBinding
 import com.pedrobruno.plant_manager.presentation.viewmodel.IntroductionViewModel
@@ -95,6 +96,9 @@ class IntroductionFragment : Fragment() {
         introductionViewModel.user.observe(viewLifecycleOwner, {
             if (it) {
                 Toast.makeText(context, "Salvo com sucesso", Toast.LENGTH_LONG).show()
+                findNavController().navigate(
+                    IntroductionFragmentDirections.actionIntroductionFragmentToMidFragment()
+                )
             } else {
                 Toast.makeText(context, "Houve algum problema", Toast.LENGTH_LONG).show()
             }

@@ -3,12 +3,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_home_page">Gerencie suas plantas de forma fácil</string>
-    <string name="subtitle_home_page">Não esqueça mais de regas suas plantas. Nós cuidamos de lembrar você sempre que precisar</string>
+    <string name="subtitle_home_page">Não esqueça mais de regas suas plantas. Nós cuidamos de lembrar você sempre que precisar.</string>
     <string name="button_next"><![CDATA[>]]></string>
     <string name="title_introdution_page">Como podemos chamar você?</string>
     <string name="hint_name">Digite um nome</string>
     <string name="button_confirm">Confirmar</string>
-    <string name="subtitle_mid_fragment">Agora vamos começar a cuidar das sua plantinhas com muito cuidado</string>
+    <string name="subtitle_mid_fragment">Agora vamos começar a cuidar das sua plantinhas com muito cuidado.</string>
     <string name="title_fragment">Prontinho</string>
     <string name="button_start">Começar</string>
 </resources>
