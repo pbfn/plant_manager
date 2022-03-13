@@ -32,5 +32,14 @@
         android:id="@+id/midFragment"
         android:name="com.pedrobruno.plant_manager.presentation.ui.fragments.MidFragment"
         android:label="fragment_mid"
-        tools:layout="@layout/fragment_mid" />
+        tools:layout="@layout/fragment_mid" >
+        <action
+            android:id="@+id/action_midFragment_to_listPlantsFragment"
+            app:destination="@id/listPlantsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listPlantsFragment"
+        android:name="com.pedrobruno.plant_manager.presentation.ui.fragments.ListPlantsFragment"
+        android:label="fragment_list_plants"
+        tools:layout="@layout/fragment_list_plants" />
 </navigation>
