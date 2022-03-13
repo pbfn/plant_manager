@@ -15,4 +15,5 @@
     <string name="name">Seu nome</string>
     <string name="title_list_plants">Em qual ambiente</string>
     <string name="subtitle_list_plants">você quer colocar sua planta?</string>
+    <string name="environment">Environment</string>
 </resources>

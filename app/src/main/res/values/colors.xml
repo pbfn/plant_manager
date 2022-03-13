@@ -11,4 +11,5 @@
     <color name="text_body">#5C6660</color>
     <color name="primary">#32B768</color>
     <color name="button_disable">#8B32B768</color>
+    <color name="backgroud_card">#F5FAF7</color>
 </resources>

@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.pedrobruno.plant_manager.R
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.pedrobruno.plant_manager.databinding.FragmentListPlantsBinding
+import com.pedrobruno.plant_manager.presentation.adapters.AdapterEnvironment
 import com.pedrobruno.plant_manager.presentation.viewmodel.ListPlantsViewModel
+import com.pedrobruno.plant_manager.util.mocks.Environments
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 
@@ -18,6 +20,8 @@ class ListPlantsFragment : Fragment() {
     private val listPlantsViewModel: ListPlantsViewModel by lazy {
         getViewModel()
     }
+
+    private lateinit var adapterEnvironment: AdapterEnvironment
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,12 +38,27 @@ class ListPlantsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observeData()
+        setupRecyclerViewEnvironment()
+        initListEnvironment()
     }
 
     private fun observeData() {
         listPlantsViewModel.user.observe(viewLifecycleOwner, { username ->
             binding.textViewName.text = username
         })
+    }
+
+    private fun setupRecyclerViewEnvironment() {
+        val layout = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        adapterEnvironment = AdapterEnvironment()
+        binding.recyclerViewEnvironments.apply {
+            adapter = adapterEnvironment
+            layoutManager = layout
+        }
+    }
+
+    private fun initListEnvironment() {
+        adapterEnvironment.differ.submitList(Environments.listEnvironments)
     }
 
 }
