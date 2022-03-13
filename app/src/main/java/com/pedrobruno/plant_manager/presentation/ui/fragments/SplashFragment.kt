@@ -6,13 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import com.pedrobruno.plant_manager.databinding.FragmentSplashBinding
+import com.pedrobruno.plant_manager.presentation.viewmodel.SplashViewModel
+import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class SplashFragment : Fragment() {
 
     private var _binding: FragmentSplashBinding? = null
     private val binding: FragmentSplashBinding get() = _binding!!
+    private val splashViewModel: SplashViewModel by lazy {
+        getViewModel()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,16 +38,27 @@ class SplashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        nextPage()
+        observeData()
     }
 
-    private fun nextPage() {
+    private fun nextPage(directions: NavDirections) {
         val splashScreenTimeOut = 2000L
         Handler().postDelayed({
             findNavController().navigate(
-                SplashFragmentDirections.actionSplashFragmentToHomeFragment()
+                directions
             )
         }, splashScreenTimeOut)
+    }
+
+
+    private fun observeData() {
+        splashViewModel.user.observe(viewLifecycleOwner, { user ->
+            if (user.equals("") || user.isNullOrEmpty()) {
+                nextPage(SplashFragmentDirections.actionSplashFragmentToHomeFragment())
+            } else {
+                nextPage(SplashFragmentDirections.actionSplashFragmentToListPlantsFragment())
+            }
+        })
     }
 
 }
