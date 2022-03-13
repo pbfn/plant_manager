@@ -1,5 +1,7 @@
 package com.pedrobruno.plant_manager.data.datasource.local
 
-interface SaveUserSharedPreferencesLocalDataSource {
+interface UserSharedPreferencesLocalDataSource {
     fun saveUser(name: String?)
+
+    fun getUser(): String
 }

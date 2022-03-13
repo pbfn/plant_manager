@@ -1,12 +1,12 @@
 package com.pedrobruno.plant_manager.domain.usecase
 
-import com.pedrobruno.plant_manager.domain.repositories.SaveUserSharedPreferencesRepository
+import com.pedrobruno.plant_manager.domain.repositories.UserSharedPreferencesRepository
 import com.pedrobruno.plant_manager.domain.usecase.utils.UseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 
 class IntroductionUseCase(
-    private val saveUserSharedPreferencesRepository: SaveUserSharedPreferencesRepository,
+    private val userSharedPreferencesRepository: UserSharedPreferencesRepository,
     scope: CoroutineScope
 ) : UseCase<IntroductionUseCase.Params, Boolean>(scope = scope) {
 
@@ -16,7 +16,7 @@ class IntroductionUseCase(
     )
 
     override fun run(params: Params?): Flow<Boolean> =
-        saveUserSharedPreferencesRepository.saveUser(
+        userSharedPreferencesRepository.saveUser(
             name = params?.name
         )
 }
