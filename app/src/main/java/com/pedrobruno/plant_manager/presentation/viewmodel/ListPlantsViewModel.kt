@@ -5,12 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.pedrobruno.plant_manager.domain.usecase.GetUserUseCase
 
-class SplashViewModel(
+class ListPlantsViewModel(
     private val getUserUseCase: GetUserUseCase
 ) : ViewModel() {
 
-    private var _user = MutableLiveData<String>()
-    var user: LiveData<String> = _user
+    private val _user = MutableLiveData<String>()
+    val user: LiveData<String> = _user
 
     init {
         getUser()

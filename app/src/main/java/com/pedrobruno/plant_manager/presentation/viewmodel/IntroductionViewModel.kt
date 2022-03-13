@@ -3,18 +3,18 @@ package com.pedrobruno.plant_manager.presentation.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.pedrobruno.plant_manager.domain.usecase.IntroductionUseCase
+import com.pedrobruno.plant_manager.domain.usecase.SaveUserUseCase
 
 class IntroductionViewModel(
-    private val introductionUseCase: IntroductionUseCase
+    private val saveUserUseCase: SaveUserUseCase
 ) : ViewModel() {
 
     private var _user = MutableLiveData<Boolean>()
     var user: LiveData<Boolean> = _user
 
     fun saveUser(name: String) {
-        introductionUseCase(
-            params = IntroductionUseCase.Params(
+        saveUserUseCase(
+            params = SaveUserUseCase.Params(
                 name = name
             ),
             onSuccess = {

@@ -5,10 +5,10 @@ import com.pedrobruno.plant_manager.domain.usecase.utils.UseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 
-class IntroductionUseCase(
+class SaveUserUseCase(
     private val userSharedPreferencesRepository: UserSharedPreferencesRepository,
     scope: CoroutineScope
-) : UseCase<IntroductionUseCase.Params, Boolean>(scope = scope) {
+) : UseCase<SaveUserUseCase.Params, Boolean>(scope = scope) {
 
 
     data class Params(

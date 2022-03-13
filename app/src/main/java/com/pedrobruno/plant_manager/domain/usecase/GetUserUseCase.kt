@@ -5,7 +5,7 @@ import com.pedrobruno.plant_manager.domain.usecase.utils.UseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 
-class SplashUseCase(
+class GetUserUseCase(
     private val userSharedPreferencesRepository: UserSharedPreferencesRepository,
     scope: CoroutineScope
 ) : UseCase<String, String>(scope = scope) {
