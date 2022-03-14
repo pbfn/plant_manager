@@ -58,6 +58,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_environments"
+        tools:listitem="@layout/environment_item_adapter"
+        tools:itemCount="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -69,11 +71,14 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_plants"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recycler_view_environments" />
+        app:layout_constraintTop_toBottomOf="@+id/recycler_view_environments"
+        tools:itemCount="1"
+        tools:listitem="@layout/plants_item_adapter" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

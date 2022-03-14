@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pedrobruno.plant_manager.databinding.FragmentListPlantsBinding
 import com.pedrobruno.plant_manager.presentation.adapters.AdapterEnvironment
+import com.pedrobruno.plant_manager.presentation.adapters.AdapterPlants
 import com.pedrobruno.plant_manager.presentation.viewmodel.ListPlantsViewModel
 import com.pedrobruno.plant_manager.util.mocks.Environments
+import com.pedrobruno.plant_manager.util.mocks.Plants
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 
@@ -22,6 +25,7 @@ class ListPlantsFragment : Fragment() {
     }
 
     private lateinit var adapterEnvironment: AdapterEnvironment
+    private lateinit var adapterPlants: AdapterPlants
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +44,8 @@ class ListPlantsFragment : Fragment() {
         observeData()
         setupRecyclerViewEnvironment()
         initListEnvironment()
+        setupRecyclerViewPlants()
+        initListPlant()
     }
 
     private fun observeData() {
@@ -57,8 +63,21 @@ class ListPlantsFragment : Fragment() {
         }
     }
 
+    private fun setupRecyclerViewPlants() {
+        val layout = GridLayoutManager(requireContext(), 2)
+        adapterPlants = AdapterPlants()
+        binding.recyclerViewPlants.apply {
+            adapter = adapterPlants
+            layoutManager = layout
+        }
+    }
+
     private fun initListEnvironment() {
         adapterEnvironment.differ.submitList(Environments.listEnvironments)
+    }
+
+    private fun initListPlant() {
+        adapterPlants.differ.submitList(Plants.listPlants)
     }
 
 }
