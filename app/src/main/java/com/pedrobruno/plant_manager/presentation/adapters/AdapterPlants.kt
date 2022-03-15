@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.pedrobruno.plant_manager.databinding.PlantsItemAdapterBinding
-import com.pedrobruno.plant_manager.domain.model.Environment
 import com.pedrobruno.plant_manager.domain.model.Plant
 
 class AdapterPlants() : RecyclerView.Adapter<AdapterPlants.AdapterPlantsViewHolder>() {
@@ -40,6 +40,9 @@ class AdapterPlants() : RecyclerView.Adapter<AdapterPlants.AdapterPlantsViewHold
 
     override fun onBindViewHolder(holder: AdapterPlantsViewHolder, position: Int) {
         val plant = differ.currentList[position]
+        holder.itemView.apply {
+            Glide.with(this).load(plant.link_photo).into(holder.imagePlant)
+        }
         holder.apply {
             plantName.text = plant.name
         }

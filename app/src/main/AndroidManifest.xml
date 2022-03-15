@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.pedrobruno.plant_manager">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".activity.MainApplication"
         android:allowBackup="true"
