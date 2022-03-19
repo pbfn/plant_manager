@@ -15,8 +15,8 @@ class SaveUserUseCase(
         val name: String
     )
 
-    override fun run(params: Params?): Flow<Boolean> =
+    override fun run(params: Params): Flow<Boolean> =
         userSharedPreferencesRepository.saveUser(
-            name = params?.name
+            name = params.name
         )
 }

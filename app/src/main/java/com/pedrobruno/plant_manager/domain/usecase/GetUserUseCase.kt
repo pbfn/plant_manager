@@ -11,7 +11,7 @@ class GetUserUseCase(
 ) : UseCase<String, String>(scope = scope) {
 
 
-    override fun run(params: String?): Flow<String> {
+    override fun run(params: String): Flow<String> {
         return userSharedPreferencesRepository.getUser()
     }
 
