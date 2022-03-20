@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -52,10 +53,11 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initGoogleSignInClient()
+        observeData()
         setupListeners()
     }
 
-    private fun setupListeners(){
+    private fun setupListeners() {
         binding.buttonGoogleLogin.setOnClickListener {
             signIn()
         }
@@ -100,5 +102,10 @@ class LoginFragment : Fragment() {
         authGoogleViewModel.loginWithGoogle(googleAuthCredential)
     }
 
+    private fun observeData() {
+        authGoogleViewModel.user.observe(viewLifecycleOwner) {
+            Toast.makeText(context, "Bem vindo ${it.name}", Toast.LENGTH_LONG).show()
+        }
+    }
 
 }

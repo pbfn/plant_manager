@@ -11,15 +11,15 @@ import kotlinx.coroutines.flow.flow
 class AuthUserFirebaseUseCase(
     private val authFirebaseRepository: FirebaseAuthRepository,
     scope: CoroutineScope
-) : UseCase<AuthUserFirebaseUseCase.Params, User>(scope = scope) {
+) : UseCase<AuthUserFirebaseUseCase.Params, User?>(scope = scope) {
 
 
     data class Params(
         val googleAuthCredential: AuthCredential
     )
 
-    override fun run(params: Params): Flow<User> = flow {
-        authFirebaseRepository.loginGoogle(params.googleAuthCredential)
+    override fun run(params: Params): Flow<User?> {
+        return authFirebaseRepository.loginGoogle(params.googleAuthCredential)
     }
 
 }

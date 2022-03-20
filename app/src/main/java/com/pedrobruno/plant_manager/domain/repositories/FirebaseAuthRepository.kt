@@ -6,6 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface FirebaseAuthRepository {
 
-    suspend fun loginGoogle(credential: AuthCredential): Flow<User?>
+     fun loginGoogle(credential: AuthCredential): Flow<User?>
 
 }

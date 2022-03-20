@@ -6,29 +6,40 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.pedrobruno.plant_manager.domain.model.User
 import com.pedrobruno.plant_manager.domain.repositories.FirebaseAuthRepository
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.callbackFlow
-import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-class FirebaseAuthRepositoryImpl() : FirebaseAuthRepository {
+class FirebaseAuthRepositoryImpl(private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()) :
+    FirebaseAuthRepository {
 
-    override suspend fun loginGoogle(credential: AuthCredential): Flow<User?> = flow {
+    override fun loginGoogle(credential: AuthCredential): Flow<User?> {
         var user: User? = null
-        val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
         var isNewUser = false
-        firebaseAuth.signInWithCredential(credential).addOnSuccessListener { authResult ->
-            val fireBaseUser = firebaseAuth.currentUser
+        return channelFlow {
+            firebaseAuth.signInWithCredential(credential).addOnSuccessListener { authResult ->
+                val fireBaseUser = firebaseAuth.currentUser
 
-            if (authResult.additionalUserInfo!!.isNewUser) {
-                isNewUser = true
+                if (authResult.additionalUserInfo!!.isNewUser) {
+                    isNewUser = true
+                }
+                user = User(
+                    uid = fireBaseUser!!.uid,
+                    email = fireBaseUser.email,
+                    name = fireBaseUser.displayName,
+                    isNewUser = isNewUser
+                )
+            }.addOnCompleteListener {
+                launch {
+                    send(user)
+                }
             }
-            user = User(
-                uid = fireBaseUser!!.uid,
-                email = fireBaseUser.email,
-                name = fireBaseUser.displayName,
-                isNewUser = isNewUser
-            )
+            awaitClose()
         }
-        emit(user)
+
+
     }
 }
