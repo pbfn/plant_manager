@@ -11,17 +11,15 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_introductionFragment"
-            app:destination="@id/introductionFragment" />
+            android:id="@+id/action_homeFragment_to_midFragment"
+            app:destination="@id/midFragment" />
     </fragment>
     <fragment
         android:id="@+id/introductionFragment"
         android:name="com.pedrobruno.plant_manager.presentation.ui.fragments.IntroductionFragment"
         android:label="fragment_introduction"
         tools:layout="@layout/fragment_introduction" >
-        <action
-            android:id="@+id/action_introductionFragment_to_midFragment"
-            app:destination="@id/midFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/midFragment"
@@ -46,6 +44,9 @@
         <action
             android:id="@+id/action_splashFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_listPlantsFragment"
+            app:destination="@id/listPlantsFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -55,5 +56,11 @@
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_introductionFragment"
+            app:destination="@id/introductionFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_listPlantsFragment"
+            app:destination="@id/listPlantsFragment" />
     </fragment>
 </navigation>
