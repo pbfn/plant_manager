@@ -53,11 +53,12 @@ class SplashFragment : Fragment() {
 
     private fun observeData() {
         splashViewModel.user.observe(viewLifecycleOwner, { user ->
-            if (user.equals("") || user.isNullOrEmpty()) {
-                nextPage(SplashFragmentDirections.actionSplashFragmentToHomeFragment())
-            } else {
-                nextPage(SplashFragmentDirections.actionSplashFragmentToListPlantsFragment())
-            }
+            nextPage(SplashFragmentDirections.actionSplashFragmentToLoginFragment())
+//            if (user.equals("") || user.isNullOrEmpty()) {
+//                nextPage(SplashFragmentDirections.actionSplashFragmentToHomeFragment())
+//            } else {
+//                nextPage(SplashFragmentDirections.actionSplashFragmentToListPlantsFragment())
+//            }
         })
     }
 
