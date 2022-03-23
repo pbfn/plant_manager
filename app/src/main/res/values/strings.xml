@@ -18,8 +18,5 @@
     <string name="environment">Environment</string>
     <string name="name_plant">Name Plant</string>
     <string name="welcome_app">Bem vindo ao Plant Manager</string>
-    <string name="hint_email">Informe o email</string>
-    <string name="hint_password">Informe a senha</string>
-    <string name="login">Entrar</string>
-    <string name="forgot_password">Esqueci a senha</string>
+    <string name="login">Entrar como convidado</string>
 </resources>
