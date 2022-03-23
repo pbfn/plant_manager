@@ -52,14 +52,13 @@ class SplashFragment : Fragment() {
 
 
     private fun observeData() {
-        splashViewModel.user.observe(viewLifecycleOwner, { user ->
-            nextPage(SplashFragmentDirections.actionSplashFragmentToLoginFragment())
-//            if (user.equals("") || user.isNullOrEmpty()) {
-//                nextPage(SplashFragmentDirections.actionSplashFragmentToHomeFragment())
-//            } else {
-//                nextPage(SplashFragmentDirections.actionSplashFragmentToListPlantsFragment())
-//            }
-        })
+        splashViewModel.user.observe(viewLifecycleOwner) { user ->
+            if (user.equals("") || user.isNullOrEmpty()) {
+                nextPage(SplashFragmentDirections.actionSplashFragmentToLoginFragment())
+            } else {
+                nextPage(SplashFragmentDirections.actionSplashFragmentToListPlantsFragment())
+            }
+        }
     }
 
 }

@@ -96,9 +96,9 @@ class IntroductionFragment : Fragment() {
         introductionViewModel.user.observe(viewLifecycleOwner) {
             if (it) {
                 Toast.makeText(context, "Salvo com sucesso", Toast.LENGTH_LONG).show()
-//                findNavController().navigate(
-//                    IntroductionFragmentDirections.actionIntroductionFragmentToMidFragment()
-//                )
+                findNavController().navigate(
+                    IntroductionFragmentDirections.actionIntroductionFragmentToHomeFragment()
+                )
             } else {
                 Toast.makeText(context, "Houve algum problema", Toast.LENGTH_LONG).show()
             }
