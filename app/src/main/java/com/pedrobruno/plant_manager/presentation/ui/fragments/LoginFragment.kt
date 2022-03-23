@@ -17,6 +17,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.AuthCredential
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.pedrobruno.plant_manager.R
 import com.pedrobruno.plant_manager.databinding.FragmentLoginBinding
@@ -74,6 +75,15 @@ class LoginFragment : Fragment() {
             .build()
 
         googleSingInClient = GoogleSignIn.getClient(requireActivity(), googleSignInOptions)
+        checkUser()
+    }
+
+    private fun checkUser() {
+        val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+        val firebaseUser = firebaseAuth.currentUser
+        if (firebaseUser != null){
+            nextPage(LoginFragmentDirections.actionLoginFragmentToListPlantsFragment())
+        }
     }
 
     private fun signIn() {
