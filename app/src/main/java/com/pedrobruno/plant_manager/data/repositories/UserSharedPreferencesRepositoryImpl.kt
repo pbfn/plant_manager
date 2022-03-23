@@ -17,8 +17,9 @@ class UserSharedPreferencesRepositoryImpl(
 
     }
 
-    override fun getUser(): Flow<String> = flow {
-        val nameUser = userSharedPreferencesLocalDataSource.getUser()
-        emit(nameUser)
+    override fun getUser(): Flow<User> = flow {
+        userSharedPreferencesLocalDataSource.getUser().collect {user ->
+            emit(user)
+        }
     }
 }

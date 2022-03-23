@@ -7,5 +7,5 @@ interface UserSharedPreferencesRepository {
 
     fun saveUser(name: String?): Flow<User>
 
-    fun getUser(): Flow<String>
+    fun getUser(): Flow<User>
 }

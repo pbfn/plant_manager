@@ -4,7 +4,7 @@ import com.pedrobruno.plant_manager.domain.model.User
 import kotlinx.coroutines.flow.Flow
 
 interface UserSharedPreferencesLocalDataSource {
-    fun saveUser(name: String?):Flow<User>
+    fun saveUser(name: String?): Flow<User>
 
-    fun getUser(): String
+    fun getUser(): Flow<User>
 }

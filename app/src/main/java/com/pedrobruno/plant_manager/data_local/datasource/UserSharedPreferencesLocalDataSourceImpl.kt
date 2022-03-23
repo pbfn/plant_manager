@@ -16,14 +16,22 @@ class UserSharedPreferencesLocalDataSourceImpl(
             value = name!!
         )
         val user = User(
-        uid = "",
-        email = "",
-        name = name,
-        isNewUser = true)
+            uid = "",
+            email = "",
+            name = name,
+            isNewUser = true
+        )
         emit(user)
     }
 
-    override fun getUser(): String {
-        return sharedPreferencesHelper.getString(key = NAME_USER_KEY)
+    override fun getUser(): Flow<User> = flow {
+        val user =
+            User(
+                uid = "",
+                email = "",
+                name = sharedPreferencesHelper.getString(key = NAME_USER_KEY),
+                isNewUser = false
+            )
+        emit(user)
     }
 }

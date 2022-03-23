@@ -53,7 +53,7 @@ class SplashFragment : Fragment() {
 
     private fun observeData() {
         splashViewModel.user.observe(viewLifecycleOwner) { user ->
-            if (user.equals("") || user.isNullOrEmpty()) {
+            if (user == null || user.name == "") {
                 nextPage(SplashFragmentDirections.actionSplashFragmentToLoginFragment())
             } else {
                 nextPage(SplashFragmentDirections.actionSplashFragmentToListPlantsFragment())
