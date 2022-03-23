@@ -94,7 +94,7 @@ class IntroductionFragment : Fragment() {
 
     private fun observeData() {
         introductionViewModel.user.observe(viewLifecycleOwner) {
-            if (it) {
+            if (it != null) {
                 Toast.makeText(context, "Salvo com sucesso", Toast.LENGTH_LONG).show()
                 findNavController().navigate(
                     IntroductionFragmentDirections.actionIntroductionFragmentToHomeFragment()
