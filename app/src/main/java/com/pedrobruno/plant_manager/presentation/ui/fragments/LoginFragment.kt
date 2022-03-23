@@ -62,8 +62,15 @@ class LoginFragment : Fragment() {
     }
 
     private fun setupListeners() {
-        binding.buttonGoogleLogin.setOnClickListener {
-            signIn()
+        binding.apply {
+            buttonGoogleLogin.setOnClickListener {
+                signIn()
+            }
+
+            buttonLogin.setOnClickListener {
+                nextPage(LoginFragmentDirections.actionLoginFragmentToIntroductionFragment())
+            }
+
         }
     }
 

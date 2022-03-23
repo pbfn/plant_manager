@@ -49,9 +49,9 @@ class ListPlantsFragment : Fragment() {
     }
 
     private fun observeData() {
-        listPlantsViewModel.user.observe(viewLifecycleOwner, { username ->
-            binding.textViewName.text = username
-        })
+        listPlantsViewModel.user.observe(viewLifecycleOwner) { user ->
+            binding.textViewName.text = user?.name
+        }
     }
 
     private fun setupRecyclerViewEnvironment() {

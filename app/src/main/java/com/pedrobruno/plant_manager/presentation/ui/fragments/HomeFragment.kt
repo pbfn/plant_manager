@@ -38,9 +38,9 @@ class HomeFragment : Fragment() {
 
     private fun setupListeners() {
         binding.buttonNextPage.setOnClickListener {
-//            findNavController().navigate(
-//                HomeFragmentDirections.actionHomeFragmentToIntroductionFragment()
-//            )
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToMidFragment()
+            )
         }
     }
 
